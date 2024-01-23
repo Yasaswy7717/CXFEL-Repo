@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "clean",
+        "command": "cmd",
+        "args": ["/c", "del", "/q", "*.o", "final_executable.exe"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      },
+      {
+        "label": "rebuild",
+        "command": "gcc",
+        "args": ["-o", "final_executable.exe", "DM_Spiral.c", "read_h5.c", "-I\"C:\\Program Files\\HDF_Group\\HDF5\\1.14.3\\include\"", "-L\"C:\\Program Files\\HDF_Group\\HDF5\\1.14.3\\lib\"", "-lhdf5"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+  
