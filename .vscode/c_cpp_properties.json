@@ -4,14 +4,16 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "C:/Users/yasaswy/Downloads/matio-1.5.26/matio-1.5.26/src"
+                "C:/Users/yasaswy/Downloads/matio-1.5.26/matio-1.5.26/src",
+                "C:/Users/yasaswy/Downloads/matio-1.5.26/matio-1.5.26/visual_studio",
+                "C:\\Users\\yasaswy\\AppData\\Local\\Programs\\Python\\Python310\\include"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:\\Program Files\\GNU Octave\\Octave-8.4.0\\mingw64\\bin\\gcc.exe",
+            "compilerPath": "C:/MinGW/bin/gcc.exe",
             "cStandard": "c17",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "windows-gcc-x64"

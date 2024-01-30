@@ -1,0 +1,13 @@
+{
+    "cSpell.words": [
+        "LIBMATIO",
+        "matio"
+    ],
+    "files.associations": {
+        "matio.h": "c",
+        "stdarg.h": "c",
+        "matio_pubconf.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c"
+    }
+}
