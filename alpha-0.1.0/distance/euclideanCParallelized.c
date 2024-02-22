@@ -3,6 +3,7 @@
 #include <math.h>
 #include <time.h>
 #include <omp.h>
+#include <sys/time.h>
 
 double squaredEuclideanDistance(double* point1, double* point2, int D) {
     double distance = 0.0;
@@ -12,6 +13,12 @@ double squaredEuclideanDistance(double* point1, double* point2, int D) {
         distance += diff * diff;
     }
     return distance;
+}
+
+double get_wall_time() {
+    struct timeval time;
+    gettimeofday(&time, NULL);
+    return (double)time.tv_sec + (double)time.tv_usec * 1e-6;
 }
 
 int main() {
@@ -44,7 +51,8 @@ int main() {
             }
 
             // Start measuring runtime
-            clock_t start_time = clock();
+            //clock_t start_time = clock();
+            double start_time = get_wall_time();
 
             // Calculate squared Euclidean distances and store the result
             #pragma omp parallel for
@@ -55,10 +63,12 @@ int main() {
             }
 
             // Stop measuring runtime
-            clock_t end_time = clock();
+            //clock_t end_time = clock();
+            double end_time = get_wall_time();
 
             // Print runtime and dimensions
-            printf("N=%d, D=%d, Runtime: %f seconds\n", N, D, (double)(end_time - start_time) / CLOCKS_PER_SEC);
+            //printf("N=%d, D=%d, Runtime: %f seconds\n", N, D, (double)(end_time - start_time) / CLOCKS_PER_SEC);
+            printf("N=%d, D=%d, Runtime: %f seconds\n", N, D, end_time - start_time);
 
             // Free allocated memory
             for (int i = 0; i < N; i++) {
